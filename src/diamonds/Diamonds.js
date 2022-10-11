@@ -11,7 +11,7 @@ import state from "../store"
 const dummy = new Object3D()
 export default function Diamonds() {
   const gltf = useLoader(GLTFLoader, "/diamond.glb")
-  useMemo(() => gltf.scene.children[0].geometry.center(), [])
+  useMemo(() => gltf.scene.children[0].geometry.center(), [gltf])
 
   const { size, gl, scene, camera, clock } = useThree()
   const { contentMaxWidth, sectionHeight, mobile } = useBlock()
